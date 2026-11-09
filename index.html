@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#18251e" />
+  <title>Hearth & Harvest — A Medieval Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game" aria-label="Hearth and Harvest medieval village game">
+    <canvas id="world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Hearth and Harvest home"><span class="brand-mark">✦</span><span>HEARTH <i>&</i> HARVEST</span></a>
+      <div class="day-pill"><span class="sun-icon">☀</span><span>DAY <b id="day-number">01</b></span><span class="pill-divider"></span><span id="clock">8:00 AM</span></div>
+      <div class="top-right"><span class="season">EARLY AUTUMN</span><button class="icon-button" id="sound-button" aria-label="Toggle sound">♫</button><button class="icon-button" id="help-button" aria-label="How to play">?</button></div>
+    </header>
+    <section class="quest-card" id="quest-card">
+      <div class="quest-eyebrow"><span class="quest-dot"></span> TODAY'S ERRAND</div>
+      <h1 id="quest-title">A helping hand</h1>
+      <p id="quest-description">The village baker needs a few things before the oven is lit.</p>
+      <div class="quest-progress"><span id="progress-label">0 / 3 gathered</span><span class="progress-track"><i id="progress-fill"></i></span></div>
+      <div class="quest-reward"><span class="coin">✦</span> <b>+12</b> village coins <span class="reward-separator">·</span><span class="heart-small">♥</span> <b>+1</b> goodwill</div>
+    </section>
+    <div class="location"><span class="location-pin">⌖</span><span><b id="location-name">WILLOWMEAD</b><small>THE COMMON GREEN</small></span></div>
+    <div class="weather"><span>☀</span><span>Fair weather</span><i></i><span>16°</span></div>
+    <section class="inventory" aria-label="Inventory">
+      <div class="inventory-title">YOUR SATCHEL <span id="inventory-count">0 / 6</span></div>
+      <div class="inventory-items" id="inventory-items"></div>
+    </section>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="interact-hint" id="interact-hint"><span class="keycap">E</span><span>Talk to the baker</span><span class="hint-arrow">↗</span></div>
+    <button class="touch-action" id="touch-action" aria-label="Interact">TAP<br><span>TO GATHER</span></button>
+    <div class="mobile-controls" id="mobile-controls" aria-label="Movement controls">
+      <div class="joystick-base" id="joystick"><div class="joystick-knob" id="joystick-knob"></div></div>
+      <span class="move-label">MOVE</span>
+    </div>
+    <div class="interaction-controls"><span class="desktop-help"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move <span class="control-divider">·</span> <kbd>E</kbd> interact</span><button id="camera-button" class="camera-button" aria-label="Change camera view"><span>◉</span> <b>CAMERA</b></button></div>
+    <div class="crosshair" id="crosshair"><span></span></div>
+    <div class="modal-backdrop" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div class="modal-sun">☼</div><div class="modal-kicker">A QUIETER KIND OF ADVENTURE</div><h2 id="modal-title">Welcome to<br><em>Willowmead.</em></h2><p id="modal-copy">The harvest is nearly in, the hearth is warm, and your neighbours could use a hand. Take a little stroll around the village green and see what the day brings.</p><div class="modal-tip"><span>✦</span><p><b>Today's errand</b><br>Find 3 wild herbs for Elspeth the baker. Look for a gentle shimmer near the village paths.</p></div><button class="primary-button" id="start-button">STEP INTO THE VILLAGE <span>→</span></button><div class="modal-foot">A SMALL LIFE IN A BIGGER WORLD</div></section></div>
+    <div class="completion-banner" id="completion-banner"><span class="banner-star">✦</span><div><b>Errand complete!</b><small>Willowmead is a little brighter today.</small></div><span class="banner-reward">+12 ✦</span></div>
+    <div class="fade-overlay" id="fade-overlay"></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

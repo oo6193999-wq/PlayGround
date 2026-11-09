@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#e8d8b8" />
+    <link rel="icon" href="data:," />
+    <title>Meadowmere — A Medieval Village Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="game"></div>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><div class="brand-name">MEADOWMERE</div><div class="brand-sub">A VILLAGE STORY</div></div></div>
+      <div class="day-pill"><span class="sun-icon">☀</span><span>DAY <b id="day-count">1</b></span><i></i><span id="clock">8:15 AM</span></div>
+      <div class="top-right"><div class="weather">☀ <span>Fair skies</span></div><div class="coin-pill"><span>◈</span> <b id="coins">12</b></div></div>
+    </header>
+    <aside class="quest-card" id="quest-card">
+      <div class="quest-eyebrow"><span class="quest-star">✦</span> YOUR FIRST DAY <span class="quest-line"></span></div>
+      <h1 id="quest-title">A helping hand</h1>
+      <p id="quest-desc">The village healer needs three meadow herbs. Find them growing in the grass.</p>
+      <div class="quest-progress"><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><span id="progress-text">0 / 3</span></div>
+      <div class="quest-footer"><span class="tiny-check">✓</span><span id="quest-hint">Wander the meadow to find herbs</span></div>
+    </aside>
+    <div class="location"><span class="location-pin">⌖</span><div><b id="location-name">THE VILLAGE GREEN</b><span>Meadowmere · 1348</span></div></div>
+    <div class="toast" id="toast"></div>
+    <div class="interaction" id="interaction"><span id="interaction-icon">✦</span><span id="interaction-text">Talk to Elowen</span><kbd id="interaction-key">E</kbd></div>
+    <div class="controls-hint" id="controls-hint"><span>WASD</span> move <i>·</i> <span>SPACE</span> interact</div>
+    <div class="mobile-controls" id="mobile-controls">
+      <div class="joy-zone" id="joy-zone"><div class="joy-ring"><div class="joy-knob" id="joy-knob"></div></div></div>
+      <button class="action-button" id="action-button" aria-label="Interact"><span>✦</span><small>ACT</small></button>
+    </div>
+    <div class="help-tip" id="help-tip"><span>✦</span> Walk up to the healer to begin your first errand</div>
+    <div class="dialogue hidden" id="dialogue"><div class="dialogue-card"><div class="dialogue-avatar" id="dialogue-avatar">E</div><div class="dialogue-content"><div class="dialogue-name" id="dialogue-name">ELOWEN · VILLAGE HEALER</div><p id="dialogue-copy">The meadow is full of little wonders. Would you gather some herbs for me?</p><button id="dialogue-next">I'LL HELP <span>→</span></button></div><button class="dialogue-close" id="dialogue-close" aria-label="Close">×</button></div></div>
+    <div class="start-screen" id="start-screen"><div class="start-backdrop"></div><div class="intro-content"><div class="intro-crest">✦</div><div class="intro-kicker">A QUIET LIFE AWAITS</div><h2>Find your place<br>in <em>Meadowmere.</em></h2><p>A new day dawns in the year 1348. Meet the villagers, lend a hand, and make this little corner of the medieval world your home.</p><button class="start-button" id="start-button">BEGIN YOUR STORY <span>→</span></button><div class="start-note"><span>✦</span> BEST EXPERIENCED WITH SOUND OFF · TAKE YOUR TIME</div></div><div class="intro-bottom"><span>MEADOWMERE</span><span>◆</span><span>EST. 1348</span></div></div>
+    <div class="completion hidden" id="completion"><div class="completion-card"><div class="completion-icon">✿</div><div class="completion-overline">A KINDNESS REMEMBERED</div><h2>Well done,<br><em>good neighbor.</em></h2><p>Elowen's remedies are ready, and Meadowmere feels a little brighter today.</p><div class="reward-line"><span>✦</span> QUEST COMPLETE <b>+ 18 coins</b></div><button id="continue-button">KEEP EXPLORING <span>→</span></button></div></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
